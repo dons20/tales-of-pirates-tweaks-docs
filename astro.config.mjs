@@ -30,6 +30,7 @@ export default defineConfig({
 					src: 'https://cloud.umami.is/script.js',
 					defer: true,
 					'data-website-id': '5a1298c6-9356-4646-9f9d-7a1404c61644',
+					type: 'text/partytown',
 				},
 			}
 		],
