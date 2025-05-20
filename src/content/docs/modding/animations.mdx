@@ -1,0 +1,40 @@
+---
+title: Animations
+description: Learn about modifying animations in Tales of Pirates
+---
+
+Animations are a very detailed and complex part of the game. They are used in everything from character movement to special interactions.
+
+You can modify the animations in the game to speed up or skip certain animations. Top Online - Vanilla HD has enabled attack animation skips by default to improve the PvP experience for players. However, regardless of the server you're playing on, you can still modify the animations significantly to your liking.
+
+## Preparation
+
+- For viewing animations, you will need to use the [PKO file viewer](https://github.com/WeaponOwl/PKO-file-viewer).
+- For modifying animation length, you only need to use a text editor.
+
+## Modifying Length of Animations
+
+This is the easiest way to start modifying animations. Animations are specified in the `/scripts/txt/CharacterAction.tx` file. This `tx` file is simply a text file that contains a huge list of animations, their durations and specific keyframes. 
+
+Note: (I don't fully understand how the keyframes work yet, but I will update this section when I do.)
+
+The syntax is fairly simple and is well documented in some versions of the file, but here is a quick overview.
+
+```
+1										
+		1		2		59				
+		2		855		917				
+		3		918		986				
+		4		125		157				
+		5		1921		1937		1921		1929
+		6		160		178		160		169
+...
+```
+
+The first number to the leftmost column is the character type ID. This specifies which type of character this animation is for. The first couple instances of this are for the player classes (Lance, Carise, etc.).
+
+Below that in the second column is the action type or animation ID. This is the ID of the animation that is being modified. The file has a large list of these IDs and their corresponding animations. For example, the ID `64` is the `normal attack 1` animation for `Sword, knife, battle, axe, sword and shield`.
+
+The columns after that represent the `Start Frame`, `End Frame`, and `Keyframe 1` to `Keyframe X`. X represents each additional keyframe specified and does not seem to have a limit.
+
+The `Start Frame` and `End Frame` are closely associated with their respective animation file in the `/animation` folder. When viewing the animation in the PKO file viewer, you will see the exact keyframes that an animation starts and ends. This can be very helpful for restoring animations to their original state, as in the case of `TOP Online - Vanilla HD` where many animations were set to `0` to skip them entirely.
