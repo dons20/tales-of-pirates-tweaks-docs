@@ -8,7 +8,7 @@ import partytown from '@astrojs/partytown';
 export default defineConfig({
     integrations: [starlight({
         title: 'Tales of Pirates - Modding',
-        social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+        social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/dons20/tales-of-pirates-tweaks-docs' }],
         sidebar: [
             {
                 label: 'Start Here',
